@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Welcome</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+            background-image: url('assets/img/bluesky.jpg');
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: CadetBlue;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            text-align: center;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+        
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 3px;
+        }
+        
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .switch-btn {
+            display: block;
+            margin-top: 10px;
+            text-align: center;
+            color: #777;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <br>
+    <br>
+    <br>
+    <div class="container">
+        <h1>Login In</h1>
+        <form id="login-form" action="login.php" method="POST">
+            <div class="form-group">
+                <label for="login-username">username:</label>
+                <input type="text" id="login-username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="login-password">password:</label>
+                <input type="password" id="login-password" name="password" required>
+            </div>
+            <div class="button-container">
+                <input type="submit" value="Log in" class="btn">
+            </div>
+            <p class="switch-btn" style="color: darkred;">
+                haven't a account?<a href="#" onclick="showRegisterForm()">Join Us</a>
+            </p>
+        </form>
+        
+        <form id="register-form" style="display: none;" action="register.php" method="POST">
+            <h1>Login Up</h1>
+            <div class="form-group">
+                <label for="register-username">username:</label>
+                <input type="text" id="register-username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="register-password">password:</label>
+                <input type="password" id="register-password" name="password" required>
+            </div>
+            <div class="form-group">
+                <label for="confirm_password">confirm:</label>
+                <input type="password" id="confirm_password" name="confirm_password" required>
+            </div>
+            <div class="button-container">
+                <input type="submit" value="Log Up" class="btn">
+            </div>
+            <p class="switch-btn">
+                Already have?<a href="#" onclick="showLoginForm()">Login In</a>
+            </p>
+        </form>
+    
+    <script>
+        function showRegisterForm() {
+            document.getElementById("login-form").style.display = "none";
+            document.getElementById("register-form").style.display = "block";
+        }
+        
+        function showLoginForm() {
+            document.getElementById("login-form").style.display = "block";
+            document.getElementById("register-form").style.display = "none";
+        }
+    </script>
+</body>
+</html>
